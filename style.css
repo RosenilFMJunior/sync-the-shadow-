@@ -1,0 +1,100 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.panoptic-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* O Lente de Argos - Transiciona de acordo com o estado */
+#argos-lens {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0) 70%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 2s ease-in-out;
+    z-index: 1;
+}
+
+/* Estado de paralisia/meditação alcançado */
+.lens-active {
+    transform: scale(1.5);
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 80%) !important;
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.05);
+}
+
+.interface-overlay {
+    z-index: 2;
+    text-align: center;
+    pointer-events: none;
+}
+
+.title {
+    font-size: 1.2rem;
+    letter-spacing: 0.5rem;
+    opacity: 0.6;
+    margin-bottom: 20px;
+}
+
+.status-text {
+    font-size: 0.9rem;
+    opacity: 0.4;
+}
+
+#timer {
+    font-size: 2rem;
+    margin-top: 20px;
+    font-weight: 100;
+    opacity: 0.8;
+    transition: opacity 1s;
+}
+
+#manifesto {
+    position: absolute;
+    bottom: 10%;
+    max-width: 600px;
+    text-align: center;
+    padding: 20px;
+    z-index: 3;
+    transition: opacity 3s ease-in-out;
+}
+
+.quote {
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.subtext {
+    font-size: 0.8rem;
+    opacity: 0.5;
+    letter-spacing: 2px;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.visible {
+    opacity: 1 !important;
+}
